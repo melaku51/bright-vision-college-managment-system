@@ -1,0 +1,69 @@
+/* Student Management Page */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    min-width: 250px;
+}
+
+.student-info {
+    background-color: var(--light-color);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.student-info h4 {
+    margin-bottom: 10px;
+}
+
+.student-info p {
+    margin: 5px 0;
+}
+
+/* Modal specific */
+#studentModal .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Table Enhancements */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: #f9fbfd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+}
+
+th {
+    background: #003366;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #e3f0ff;
+}
+
+tr:hover {
+    background: #cce0ff;
+    transition: background 0.2s;
+}

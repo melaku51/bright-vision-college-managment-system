@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment System | Bright Vision College</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payments.css">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="payments.html" class="active">Payments</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <header>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main class="container">
+        <h2>Payment Management</h2>
+        
+        <div class="payment-container">
+            <div class="payment-form">
+                <h3>Process New Payment</h3>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="paymentStudentId">Student ID*</label>
+                        <input type="text" id="paymentStudentId" required>
+                        <button type="button" id="findStudentBtn">Find Student</button>
+                    </div>
+                    
+                    <div id="studentInfo" class="student-info hidden">
+                        <h4>Student Information</h4>
+                        <p><strong>Name:</strong> <span id="studentName">-</span></p>
+                        <p><strong>Current Balance:</strong> <span id="studentBalance">$0.00</span></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">Amount*</label>
+                        <input type="number" step="0.01" id="amount" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method*</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Select method</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentDescription">Description</label>
+                        <textarea id="paymentDescription"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn primary">Process Payment</button>
+                </form>
+            </div>
+            
+            <div class="payment-history">
+                <h3>Payment History</h3>
+                <div class="filter-options">
+                    <select id="paymentFilter">
+                        <option value="all">All Payments</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+                
+                <table id="paymentsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Student ID</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                        <!-- Payments will be loaded here -->
+                    </tbody>
+                </table>
+                <div id="loadingPayments" class="loading">Loading payments...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/payments.js"></script>
+</body>
+</html>
